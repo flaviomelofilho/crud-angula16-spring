@@ -2,3 +2,12 @@ table {
   width: 100%;
 }
 
+.loading-spinner {
+
+  display: flex;         // centraliza no eixo X e Y
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  background-color: rgba(0, 0, 0, 0.10); // fundo escuro semi-transparente
+}
