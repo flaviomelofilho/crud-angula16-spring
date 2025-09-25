@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.module';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [CoursesComponent],
@@ -20,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    SharedModule
+    SharedModule,
+    MatIconModule
   ],
 })
 export class CoursesModule {}
