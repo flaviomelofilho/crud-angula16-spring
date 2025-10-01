@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { Course } from '../model/course';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,13 +14,15 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class CoursesComponent {
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category'];
+  displayedColumns = ['name', 'category','actions'];
 
   // coursesService:CoursesService;
 
   constructor(
     private coursesService:CoursesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
   ){
     this.courses$ = this.coursesService.list().pipe(catchError(Error=>{
       this.onError('Erro ao carregar cursos.');
@@ -32,6 +35,10 @@ export class CoursesComponent {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
     });
+  }
+
+  onAdd(){
+    this.router.navigate(['new'],{relativeTo:this.route});
   }
 
 }
