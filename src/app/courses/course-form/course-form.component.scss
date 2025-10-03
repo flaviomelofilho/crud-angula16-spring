@@ -1,0 +1,21 @@
+mat-card {
+  max-width: 80%;      // limita a largura máxima do card em 80% da tela
+  margin: 2em auto;    // adiciona margem de 2em em cima/baixo e centraliza horizontalmente (auto nas laterais)
+  text-align: center;  // alinha todo o conteúdo de texto no centro
+}
+
+.full-width {
+  width: 100%;         // qualquer elemento com essa classe vai ocupar 100% da largura disponível
+}
+
+min-width {
+  width: 100%;         // aqui você escreveu como se fosse um seletor, mas 'min-width' não é classe nem tag válida
+  min-width: 150px;    // define largura mínima de 150px
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center; // centraliza horizontalmente
+  gap: 16px;               // espaço entre os botões
+  padding: 16px 0;         // espaço vertical
+}
