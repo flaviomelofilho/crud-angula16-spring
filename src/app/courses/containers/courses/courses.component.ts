@@ -1,11 +1,10 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { CoursesService } from './../services/courses.service';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { CoursesService } from '../../services/courses.service';
 import { Component } from '@angular/core';
-import { Course } from '../model/course';
+import { Course } from '../../model/course';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-courses',
@@ -15,30 +14,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CoursesComponent {
   courses$: Observable<Course[]>;
 
-
   // coursesService:CoursesService;
 
   constructor(
-    private coursesService:CoursesService,
+    private coursesService: CoursesService,
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute
-  ){
-    this.courses$ = this.coursesService.list().pipe(catchError(Error=>{
-      this.onError('Erro ao carregar cursos.');
-      return of([])
-    })
+  ) {
+    this.courses$ = this.coursesService.list().pipe(
+      catchError((Error) => {
+        this.onError('Erro ao carregar cursos.');
+        return of([]);
+      })
     );
   }
 
-  onError(errorMsg:string) {
+  onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMsg
+      data: errorMsg,
     });
   }
 
-  onAdd(){
-    this.router.navigate(['new'],{relativeTo:this.route});
+  onAdd() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
-
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { CoursesService } from '../services/courses.service';
+import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-course-form',
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class CourseFormComponent {
   form = this.formBuild.nonNullable.group({
     name: [''],
-    category: ['']
+    category: [''],
   });
 
   constructor(
