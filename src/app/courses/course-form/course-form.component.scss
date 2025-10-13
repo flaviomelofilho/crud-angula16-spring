@@ -8,7 +8,7 @@ mat-card {
   width: 100%;         // qualquer elemento com essa classe vai ocupar 100% da largura disponível
 }
 
-min-width {
+.min-width {
   width: 100%;         // aqui você escreveu como se fosse um seletor, mas 'min-width' não é classe nem tag válida
   min-width: 150px;    // define largura mínima de 150px
 }

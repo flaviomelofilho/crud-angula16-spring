@@ -1,13 +1,20 @@
-table {
-  width: 100%;
-}
-
 .loading-spinner {
-
-  display: flex;         // centraliza no eixo X e Y
+  display: flex; // centraliza no eixo X e Y
   align-items: center;
   justify-content: center;
   padding: 20px;
 
-  background-color: rgba(0, 0, 0, 0.10); // fundo escuro semi-transparente
+  background-color: rgba(0, 0, 0, 0.1); // fundo escuro semi-transparente
+}
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
 }

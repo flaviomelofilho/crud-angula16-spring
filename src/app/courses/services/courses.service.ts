@@ -19,7 +19,7 @@ export class CoursesService {
     );
   }
 
-  save(record: {record:Course}) {
-    return this.httpClient.post<Course>(this.API,record);
+  save(course: Partial <Course>) {
+    return this.httpClient.post<Course>(this.API, course);
   }
 }
