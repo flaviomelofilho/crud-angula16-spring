@@ -1,4 +1,4 @@
-<mat-table [dataSource]="courses" >
+<mat-table [dataSource]="courses">
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef>Curso</mat-header-cell>
@@ -29,7 +29,12 @@
       </button>
     </mat-header-cell>
     <mat-cell *matCellDef="let course" class="action-column">
-      <button mat-mini-fab color="primary" aria-label="Editar Curso">
+      <button
+        mat-mini-fab
+        color="primary"
+        aria-label="Editar Curso"
+        (click)="onEdit(course)"
+      >
         <mat-icon class="mat-18">edit</mat-icon>
       </button>
 
